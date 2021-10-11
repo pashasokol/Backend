@@ -22,7 +22,16 @@ io.on('connection', socket => {
     console.log('new user connected', socket.id);
 
 
-    socket.emit('message', 'Welcome to the chat');
+    // socket.emit('message', 'Welcome to the chat');
+
+    socket.on('message', data => {
+        // console.log(data);
+
+        io.sockets.emit('message',data);
+
+
+
+    })
 
 
 })
