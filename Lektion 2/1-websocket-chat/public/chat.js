@@ -9,6 +9,23 @@ const output = document.querySelector('#output');
 const form = document.querySelector('#form');
 const message = document.querySelector('#message');
 const chat = document.querySelector('#chat-window');
+const feedback = document.querySelector('#feedback');
+
+
+socket.on('connect', () => {
+    socket.emit('user', userName);
+})
+
+
+socket.on('user', data => {
+    output.innerHTML += `<p class="mb"> ${data} </p>   `
+})
+
+
+socket.on('disconnect', () => {
+    socket.emit('user', userName);
+});
+
 
 
 socket.on('message', data => {
@@ -24,6 +41,8 @@ socket.on('message', data => {
             </div>
     
     `
+
+    feedback.innerHTML = '';
 
 
     console.log(chat.scrollHeight);
@@ -47,8 +66,18 @@ form.addEventListener('submit', e =>{
     }
 
 
+
     message.value = '';
 
     message.focus();
 
+})
+
+message.addEventListener('keypress', () => {
+    socket.emit('typing', userName);
+})
+
+
+socket.on('typing', data => {
+    feedback.innerHTML = ` <p> ${data} is typing message...  </p>  `
 })

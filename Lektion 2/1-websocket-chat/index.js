@@ -19,6 +19,20 @@ server.listen(PORT, ()  => {
 const io = socket(server);
 
 io.on('connection', socket => {
+
+
+    socket.on('user', data => {
+        console.log(data);
+        socket.broadcast.emit('user', ` ${data} has joined the chat `)
+
+    }) 
+
+
+
+    socket.on('disconnect', data => {
+        io.emit('user', ` ${data} has left the chat`
+         );
+    })
     console.log('new user connected', socket.id);
 
 
@@ -29,8 +43,11 @@ io.on('connection', socket => {
 
         io.sockets.emit('message',data);
 
+    })
 
 
+    socket.on('typing', data => {
+        socket.broadcast.emit('typing', data);
     })
 
 

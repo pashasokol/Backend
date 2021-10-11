@@ -52,6 +52,7 @@
  }
 
 
+
  .enter-btn {
      background-color: darkslateblue;
      color: #fff;
@@ -93,6 +94,7 @@
      flex-direction:column ;
      justify-content: space-between;
      height: calc(100% - 64.68px);
+     position: relative;
  }
 
 #name {
@@ -146,6 +148,16 @@
 #feedback {
     color: #6d6d6d;
     margin-left: 1rem;
+    margin-bottom: .5rem;
+    position: absolute;
+    left: 0;
+    bottom: 9.25rem;
 
 }
 
+
+.mb {
+
+    margin-bottom: .5rem;
+    color: #6d6d6d;
+}
