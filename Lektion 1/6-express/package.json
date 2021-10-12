@@ -1,11 +1,11 @@
 {
-  "name": "1-websocket-chat",
+  "name": "6-express",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index",
-    "dev": "nodemon index"
+    "start": "node app",
+    "dev": "nodemon app"
   },
   "keywords": [],
   "author": "",
@@ -14,7 +14,6 @@
     "nodemon": "^2.0.13"
   },
   "dependencies": {
-    "express": "^4.17.1",
-    "socket.io": "^4.2.0"
+    "express": "^4.17.1"
   }
 }

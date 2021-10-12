@@ -1,57 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chat</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+  <div class="chat-wrapper">
 
+    <div id="chat" class="card">
+      <header class="headline">
+        <h1>CHAT</h1>
+      </header>
 
-
-    <div class="chat-wrapper">
-
-        <div id="chat" class="card">
-
-        <header class="headline">
-            <h1>CHAT</h1>
-        </header>
-
-
-      
-
-
-        <div class="flex">
-
-           <div id="chat-window">
-
-                <div id="output">
-                   
-                  
-                    
-                </div>  
+      <div class="flex">
+        <div id="chat-window">
+          <div id="output">
+            <!-- <div class="chat-box">
+              <p class="chat-name">Namnet på användaren</p>
+              <p class="chat-msg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut, animi?</p>
             </div>
-        <div id="feedback"> </div>
-                    <form id="form">
-                        <div id="name">Pavel</div>
-                     <div class="input-group">
-                        <input type="text" id="message" placeholder="message">
-                        <button id="send" class="btn">Send</button>
-                    </div>
-                    </form>
-       
-         
-        
+            <div class="chat-box right">
+              <p class="chat-name">Namnet på användaren</p>
+              <p class="chat-msg">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut, animi?</p>
+            </div> -->
 
+          </div>
         </div>
-
+        <div id="feedback"></div>
+        <form id="form">
+          <div id="name">Joakim</div>
+          <div class="input-group">
+            <!-- <label for="message">Joakim</label> -->
+            <input type="text" id="message" placeholder="message">
+            <button id="send" class="btn">send</button>
+          </div>
+        </form>
+      </div>
     </div>
-    
 
 
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="chat.js"></script>
+  </div>
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="chat.js"></script>
 </body>
 </html>

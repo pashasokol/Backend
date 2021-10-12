@@ -3,8 +3,6 @@ const fs = require('fs');
 const path = require('path');
 const server = http.createServer((req,res)  => {
 
-
-
     console.log(req.url, req.method);
 
     res.setHeader('Content-type', 'text/html')
@@ -79,26 +77,15 @@ const server = http.createServer((req,res)  => {
         } 
 
         res.end(data);
-        
     })
     
-
 } else {
     res.end(data);
 }
-    
         }
         res.end(data);
-
     })
-
-
-
-
 })
-
-
-
 
 const PORT = process.env.PORT || 9999;
 

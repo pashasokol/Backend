@@ -1,0 +1,121 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  background-color: #999;
+}
+.wrapper {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  background-color: #f3f3f3;
+  box-shadow: 5px 5px 7px 0 #33333380;
+  border-radius: 0.5rem;
+}
+.headline {
+  text-align: center;
+  padding: 0.7rem;
+  background-color: darkslateblue;
+  color: #fff;
+  border-radius: .5rem .5rem 0 0;
+
+}
+
+.input-group {
+  margin: 2rem 2rem;
+}
+.input-group input,
+.input-group button {
+  display: block;
+  width: 100%;
+  border-radius: .3rem;
+}
+.input-group input {
+  padding: .4rem .5rem;
+  margin-bottom: .2rem;
+  border: 1px solid #333;
+}
+.btn {
+  background-color: darkslateblue;
+  color: #fff;
+  border: none;
+  outline: none;
+  padding: .4rem;
+  cursor: pointer;
+}
+
+#chat {
+  width: 85%;
+  height: 75vh;
+  margin: auto;
+  margin-top: 2rem;
+}
+#chat-window {
+  width: 100%;
+  height: 100%;
+  background-color: #dfdfdf;
+  overflow-y: scroll;
+}
+.flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100% - 64.68px);
+  position: relative;
+}
+#name {
+  margin: 1rem 2rem -1rem 2rem;
+  color: #271f5e;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+#output {
+  padding: 1rem;
+}
+.chat-box {
+background-color: #fff;
+padding: 1rem;
+max-width: 80%;
+margin-bottom: .5rem;
+border-radius: .5rem;
+}
+.chat-name {
+  color: #230db4;
+  font-size: 1.1rem;
+  margin-bottom: .5rem;
+}
+.chat-msg {
+  font-size: .9rem;
+  margin-left: .5rem;
+}
+.right {
+  margin-left: auto;
+}
+
+.chat-box.right {
+background-color: darkslateblue;
+color: #fff;
+}
+.right .chat-name {
+color: #a194e4;
+}
+#feedback {
+  color: #6d6d6d;
+  margin-left: 1rem;
+  /* margin-bottom: .5rem; */
+  position: absolute;
+  left: 0;
+  bottom: 9.6rem;
+}
+.mb {
+  margin-bottom: .5rem;
+  color: #3b3b3b;
+}
