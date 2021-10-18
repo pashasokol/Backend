@@ -1,0 +1,21 @@
+.title {
+    flex: 1;
+    cursor: pointer;
+}
+
+.complete {
+    text-decoration: line-through;
+    color: #8b8b8b;
+}
+
+.wrapper {
+    position: relative;
+    height: 100vh;
+}
+
+.add {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 3rem;
+}
