@@ -12,3 +12,5 @@ app.use(express.json());
 app.use('/api/products', productController);
 
 module.exports = app;
+
+
