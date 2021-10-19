@@ -1,7 +1,13 @@
 const input = document.querySelector('#todoInput');
 const output = document.querySelector('#output');
 const addBtn = document.querySelector('#addBtn');
+const todoForm = document.querySelector('#todoForm');
+const errorMsg = document.querySelector('#errorModaLabel');
+const plusBtn = document.querySelector('#plusBtn');
+const modal = document.querySelector('#addTodo');
 
+const myModal = new bootstrap.Modal(document.getElementById('addTodo'));
+const errorModal = new bootstrap.Modal(document.getElementById('errorModal'));
 
 let todos = [];
 
@@ -38,7 +44,7 @@ const newTodo = (todo) => {
     title.classList = 'my-0 title';
 
     if(todo.completed) {
-        title.classList = 'complete';
+        title.classList.add('complete');
     }
     title.innerText = todo.title;
     title.addEventListener('click', ()=> {
@@ -63,19 +69,85 @@ const newTodo = (todo) => {
 
 const updateTodo = todo => {
 
+    fetch(`http://localhost:9999/api/todos/${todo._id}`, {
+        method: 'PATCH',
+        headers: {
+            'Content-Type' : 'application/json; charset=UTF-8'
+        }, 
+        body: JSON.stringify({
+            completed: !todo.completed
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if(data.status)
+        fetchTodos();
+    })
+
+
 }
 
-const deleteTodo = todo => {
+const deleteTodo = async todo => {
+
+    if(todo.completed) {
+
+        await fetch(`http://localhost:9999/api/todos/${todo._id}`, {
+            method: 'DELETE'
+        })
+        fetchTodos();
+    }  else {
+        errorMsg.innerText = 'You need to complete the todo first'
+        errorModal.show();
+        
+    }
+
+}
+
+const createTodo = title => {
+    fetch('http://localhost:9999/api/todos/new', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json; charset=UTF-8'
+        },
+        body: JSON.stringify({
+            title
+        })
+    })
+    .then(res => res.json())
+    .then(data => {
+        if(data.status)
+        fetchTodos();
+    })
 
 }
 
 
-
-
-addBtn.addEventListener('click', ()=> {
+todoForm.addEventListener('submit', e => {
+    e.preventDefault();
     if(input.value.trim() !== '') {
-        alert(input.value);
+        // alert(input.value);
         createTodo(input.value);
         input.value = '';
+        myModal.hide();
     }
 })
+
+
+modal.addEventListener('shown.bs.modal', () => {
+    console.log('click');
+    input.focus();
+})
+
+
+
+
+
+
+
+// addBtn.addEventListener('click', ()=> {
+//     if(input.value.trim() !== '') {
+//         alert(input.value);
+//         createTodo(input.value);
+//         input.value = '';
+//     }
+// })

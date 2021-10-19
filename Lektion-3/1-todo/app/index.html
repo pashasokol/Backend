@@ -33,7 +33,7 @@
 
 
     <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary rounded-circle py-2 add" data-bs-toggle="modal" data-bs-target="#addTodo">
+<button type="button" id="plusBtn"class="btn btn-primary rounded-circle py-2 add" data-bs-toggle="modal" data-bs-target="#addTodo">
     <i class="fas fa-plus fa-2x"></i>
   </button>
   
@@ -45,16 +45,45 @@
           <h5 class="modal-title" id="addTodoLabel">Add Todo</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+
+        <form id="todoForm">
         <div class="modal-body">
             <input type="text" id="todoInput" class="form-control" placeholder="Enter what todo">
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-          <button type="button" id="addBtn" class="btn btn-primary" data-bs-dismiss="modal">Save todo</button>
+          <button type="submit" id="addBtn" class="btn btn-primary">Save todo</button>
         </div>
+
+
+      </form>
       </div>
     </div>
   </div>
+
+
+
+
+    <!-- Error message Modal -->
+    <div class="modal fade" id="errorModal" tabindex="-1" aria-labelledby="errorModaLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="errorModaLabel">Error msg</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+  
+        
+      
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+  
+  
+        </div>
+      </div>
+    </div>
+  
 
 
 
